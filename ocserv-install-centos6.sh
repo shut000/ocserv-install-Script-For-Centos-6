@@ -60,39 +60,40 @@ function ConfigEnvironmentVariable {
 
     #端口，默认是12450
     port=12450
-    echo "Please input the port ocserv listen to."
-    printf "Default port is \e[33m${port}\e[0m, let it blank to use default port: "
-    read porttmp
-    if [[ -n "${porttmp}" ]]; then
-        port=${porttmp}
-    fi
+#     echo "Please input the port ocserv listen to."
+#     printf "Default port is \e[33m${port}\e[0m, let it blank to use default port: "
+#     read porttmp
+#     if [[ -n "${porttmp}" ]]; then
+#         port=${porttmp}
+#     fi
 
     #用户名，默认是user
     username=user
-    echo "Please input ocserv user name:"
-    printf "Default user name is \e[33m${username}\e[0m, let it blank to use default user name: "
-    read usernametmp
-    if [[ -n "${usernametmp}" ]]; then
-        username=${usernametmp}
-    fi
+#     echo "Please input ocserv user name:"
+#     printf "Default user name is \e[33m${username}\e[0m, let it blank to use default user name: "
+#     read usernametmp
+#     if [[ -n "${usernametmp}" ]]; then
+#         username=${usernametmp}
+#     fi
 
     #随机密码
-    randstr() {
-        index=0
-        str=""
-        for i in {a..z}; do arr[index]=$i; index=$(expr ${index} + 1); done
-        for i in {A..Z}; do arr[index]=$i; index=$(expr ${index} + 1); done
-        for i in {0..9}; do arr[index]=$i; index=$(expr ${index} + 1); done
-        for i in {1..10}; do str="$str${arr[$RANDOM%$index]}"; done
-        echo ${str}
-    }
-    password=$(randstr)
-    printf "Please input \e[33m${username}\e[0m's password:\n"
-    printf "Default password is \e[33m${password}\e[0m, let it blank to use default password: "
-    read passwordtmp
-    if [[ -n "${passwordtmp}" ]]; then
-        password=${passwordtmp}
-    fi
+#     randstr() {
+#         index=0
+#         str=""
+#         for i in {a..z}; do arr[index]=$i; index=$(expr ${index} + 1); done
+#         for i in {A..Z}; do arr[index]=$i; index=$(expr ${index} + 1); done
+#         for i in {0..9}; do arr[index]=$i; index=$(expr ${index} + 1); done
+#         for i in {1..10}; do str="$str${arr[$RANDOM%$index]}"; done
+#         echo ${str}
+#     }
+#     password=$(randstr)
+    passsword=letsgo
+#     printf "Please input \e[33m${username}\e[0m's password:\n"
+#     printf "Default password is \e[33m${password}\e[0m, let it blank to use default password: "
+#     read passwordtmp
+#     if [[ -n "${passwordtmp}" ]]; then
+#         password=${passwordtmp}
+#     fi
 }
 
 function PrintEnvironmentVariable {
